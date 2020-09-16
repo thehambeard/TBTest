@@ -1,0 +1,10 @@
+{
+    "Id": "TBTest",
+    "DisplayName": "TBTest",
+    "Author": "Hambeard",
+    "Version": "1.0.1",
+    "ManagerVersion": "0.22.9",
+    "Requirements": [],
+    "AssemblyName": "TBTest.dll",
+    "EntryMethod": "TBTest.Main.Load"
+}
