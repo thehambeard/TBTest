@@ -19,7 +19,6 @@ namespace TBTest
             modEntry.OnToggle = new Func<UnityModManager.ModEntry, bool, bool>(Main.OnToggle);
             Main.Logger = modEntry.Logger;
             new HarmonyLib.Harmony(modEntry.Info.Id).PatchAll(Assembly.GetExecutingAssembly());
-            modEntry.OnGUI = OnGUI;
             return true;
         }
 
@@ -28,16 +27,7 @@ namespace TBTest
             Main.enabled = value;
             return true;
         }
-
-        static void OnGUI(UnityModManager.ModEntry modEntry)
-        {
-            text = GUILayout.TextField(text);
-            if (GUILayout.Button("Custom Spawn"))
-            {
-                abf.CSpawn(text);
-            }
-        }
-
+        
         public static bool enabled;
 
         public static UnityModManager.ModEntry.ModLogger Logger;
