@@ -4,6 +4,7 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UI.ActionBar;
 using Kingmaker.UI.Common;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace TBTest
@@ -16,6 +17,7 @@ namespace TBTest
         {
             private static void Postfix(ActionBarManager __instance)
             {
+                Main.Logger.Log(MethodBase.GetCurrentMethod().ToString());
                 HarmonyLib.Traverse.Create(__instance).Method("ShowTurnPanel").GetValue();
             }
         }
